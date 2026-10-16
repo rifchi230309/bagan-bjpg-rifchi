@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私の家族 - Watashi no Kazoku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <h1>わたしのかぞく</h1>
+    <h2>Watashi no Kazoku</h2>
+    <p class="subtitle">Keluarga Saya</p>
+
+    <!-- FOTO KELUARGA LENGKAP -->
+    <div class="family-photo">
+        <img src="keluarga.jpeg" alt="Foto keluarga lengkap">
+        <p>わたしのかぞく</p>
+        <span>Watashi no Kazoku — Keluarga Saya</span>
+    </div>
+
+    <p class="instruction">
+        anggota keluarga bisa diklik untuk melihat deskripsi
+    </p>
+
+    <!-- BAGAN KELUARGA -->
+    <div class="family-tree">
+
+        <!-- ORANG TUA -->
+        <div class="parents">
+            <div class="person" data-member="mama" tabindex="0" role="button"
+                 aria-label="Lihat deskripsi Mama" aria-expanded="false">
+                <img src="mama.jpeg" alt="Mama">
+                <h3>はは</h3>
+                <p class="romaji">Haha</p>
+                <p class="meaning">Mama / Ibu</p>
+                <span class="click-hint">Klik untuk deskripsi</span>
+            </div>
+
+            <div class="person" data-member="ayah" tabindex="0" role="button"
+                 aria-label="Lihat deskripsi Ayah" aria-expanded="false">
+                <img src="papa.jpeg" alt="Ayah">
+                <h3>ちち</h3>
+                <p class="romaji">Chichi</p>
+                <p class="meaning">Papa / Ayah</p>
+                <span class="click-hint">Klik untuk deskripsi</span>
+            </div>
+        </div>
+
+        <div class="vertical-line"></div>
+        <div class="horizontal-line"></div>
+
+        <!-- ANAK-ANAK -->
+        <div class="children">
+            <div class="child">
+                <div class="vertical-child-line"></div>
+
+                <div class="person" data-member="saya" tabindex="0" role="button"
+                     aria-label="Lihat deskripsi saya" aria-expanded="false">
+                    <img src="saya.jpeg" alt="Saya">
+                    <h3>わたし</h3>
+                    <p class="romaji">Watashi</p>
+                    <p class="meaning">Saya / Anak sulung</p>
+                    <span class="click-hint">Klik untuk deskripsi</span>
+                </div>
+            </div>
+
+            <div class="child">
+                <div class="vertical-child-line"></div>
+
+                <div class="person" data-member="adik" tabindex="0" role="button"
+                     aria-label="Lihat deskripsi adik perempuan" aria-expanded="false">
+                    <img src="adik.jpeg" alt="Adik perempuan">
+                    <h3>いもうと</h3>
+                    <p class="romaji">Imōto</p>
+                    <p class="meaning">Adik perempuan</p>
+                    <span class="click-hint">Klik untuk deskripsi</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESKRIPSI ANGGOTA YANG DIKLIK -->
+    <section id="description-panel" class="description-panel" hidden
+             aria-live="polite">
+        <h2 id="description-title">Deskripsi Keluarga</h2>
+
+        <p class="japanese" id="description-japanese"></p>
+        <p class="romaji" id="description-romaji"></p>
+        <p class="meaning" id="description-meaning"></p>
+
+        <button id="close-description" type="button">Tutup Deskripsi</button>
+    </section>
+
+    <!-- PERKENALAN KELUARGA DI BAGIAN BAWAH -->
+    <section class="family-text">
+        <h2>かぞくのしょうかい</h2>
+        <p class="romaji">Kazoku no shōkai</p>
+        <p class="meaning">Perkenalan Keluarga</p>
+
+        <div class="intro-item">
+            <h3>日本語（にほんご）— Bahasa Jepang</h3>
+            <p class="japanese">
+                これはわたしのかぞくです。<br>
+                かぞくはよにんです。<br>
+                わたしと、いもうとと、ははと、ちちがいます。<br>
+                わたしはふたりきょうだいです。<br>
+                いもうとはひとりです。<br>
+                わたしはきょうだいのなかでいちばんうえです。
+            </p>
+        </div>
+
+        <div class="intro-item">
+            <h3>Romaji</h3>
+            <p>
+                Kore wa watashi no kazoku desu.<br>
+                Kazoku wa yonin desu.<br>
+                Watashi to, imōto to, Haha to, Chichi ga imasu.<br>
+                Watashi wa futari kyōdai desu.<br>
+                Imōto wa hitori desu.<br>
+                Watashi wa kyōdai no naka de ichiban ue desu.
+            </p>
+        </div>
+
+        <div class="intro-item">
+            <h3>Arti Bahasa Indonesia</h3>
+            <p>
+                Ini adalah keluarga saya.<br>
+                Keluarga saya berjumlah empat orang.<br>
+                Ada saya, adik perempuan, mama, dan papa.<br>
+                Saya dua bersaudara.<br>
+                Saya mempunyai satu adik perempuan.<br>
+                Saya adalah anak sulung.
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

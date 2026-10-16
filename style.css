@@ -1,0 +1,393 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fcfbfc, #c5e4fa);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+/* =========================
+   JUDUL
+========================= */
+
+h1 {
+    font-size: 45px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #555;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FOTO KELUARGA LENGKAP
+========================= */
+
+.family-photo {
+    background: white;
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto 50px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.family-photo img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.family-photo p {
+    margin-top: 12px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.family-photo span {
+    color: #e85d75;
+    font-weight: bold;
+}
+
+/* =========================
+   FAMILY TREE
+========================= */
+
+.family-tree {
+    position: relative;
+    width: 100%;
+}
+
+/* ORANG TUA */
+
+.parents {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+    position: relative;
+}
+
+/* KARTU */
+
+.person {
+    width: 220px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 2;
+}
+
+.person img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ffb6c8;
+    margin-bottom: 12px;
+}
+
+.person h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.romaji {
+    color: #e85d75;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.meaning {
+    color: #666;
+    margin-top: 5px;
+}
+
+/* =========================
+   GARIS ORANG TUA
+========================= */
+
+/* Garis horizontal yang menghubungkan papa dan mama */
+.parents::after {
+    content: "";
+    position: absolute;
+
+    width: 400px;
+    height: 4px;
+
+    background: #777;
+
+    bottom: -25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* Garis vertikal turun */
+.vertical-line {
+    width: 4px;
+    height: 55px;
+    background: #777;
+    margin: 0 auto;
+}
+
+/* =========================
+   GARIS KE ANAK
+========================= */
+
+/* Garis horizontal di atas anak */
+.horizontal-line {
+    width: 400px;
+    height: 4px;
+    background: #777;
+    margin: 0 auto;
+}
+
+/* Anak-anak */
+.children {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+}
+
+/* Setiap anak */
+.child {
+    position: relative;
+    padding-top: 50px;
+}
+
+/* Garis turun ke masing-masing anak */
+.vertical-child-line {
+    position: absolute;
+
+    width: 4px;
+    height: 50px;
+
+    background: #777;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/* =========================
+   KETERANGAN BAWAH
+========================= */
+
+.family-text {
+    background: white;
+    padding: 25px;
+    margin: 50px auto 0;
+    max-width: 600px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+}
+
+.family-text h2 {
+    color: #e85d75;
+    margin-bottom: 8px;
+}
+
+.family-text p {
+    margin-top: 6px;
+    color: #555;
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 700px) {
+
+    .parents,
+    .children {
+        gap: 30px;
+    }
+
+    .parents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parents::after {
+        display: none;
+    }
+
+    .horizontal-line {
+        display: none;
+    }
+
+    .children {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vertical-line {
+        height: 40px;
+    }
+
+    .child {
+        padding-top: 40px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .person {
+        width: 210px;
+    }
+}
+
+/* KARTU KELUARGA BISA DIKLIK */
+.person {
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.person:hover,
+.person:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(232, 93, 117, 0.3);
+    outline: 2px solid #e85d75;
+    outline-offset: 3px;
+}
+
+.click-hint {
+    display: block;
+    margin-top: 12px;
+    color: #e85d75;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* PANEL DESKRIPSI */
+.description-panel {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 28px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    animation: muncul 0.3s ease;
+}
+
+.description-panel[hidden] {
+    display: none;
+}
+
+.description-panel h2 {
+    margin-bottom: 18px;
+    color: #e85d75;
+}
+
+.japanese {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #333;
+    margin: 12px 0;
+}
+
+.description-panel .romaji {
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.description-panel .meaning {
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+#close-description {
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: #e85d75;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#close-description:hover {
+    background: #d74763;
+}
+
+.instruction {
+    margin: 20px 0;
+    color: #666;
+}
+
+/* PERKENALAN KELUARGA DI BAGIAN BAWAH */
+.family-text {
+    line-height: 1.8;
+}
+
+.family-text .intro-item {
+    padding: 20px 0;
+    border-top: 1px solid #f1d5dc;
+}
+
+.intro-item h3 {
+    color: #e85d75;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.intro-item p {
+    overflow-wrap: anywhere;
+}
+
+/* ANIMASI */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TAMPILAN HP */
+@media (max-width: 700px) {
+    .description-panel {
+        padding: 20px;
+    }
+
+    .japanese {
+        font-size: 18px;
+    }
+
+    .family-text {
+        padding: 20px;
+    }
+}
